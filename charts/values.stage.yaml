@@ -1,6 +1,6 @@
 ingress:
   hosts:
-    - host: stage-tutorial.rexagents.com
+    - host: stage-sample.rexagents.com
 
 env:
   REX_dinolol_LOG_LEVEL: WARNING

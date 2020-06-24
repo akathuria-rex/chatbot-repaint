@@ -1,6 +1,6 @@
 ingress:
   hosts:
-    - host: qa-tutorial.rexagents.com
+    - host: qa-sample.rexagents.com
 
 env:
   REX_dinolol_LOG_LEVEL: INFO

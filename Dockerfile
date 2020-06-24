@@ -1,8 +1,8 @@
 FROM python:3.6
 
-LABEL maintainer="Olivia Pomerenk <opomerenk@rexchange.com>"
+LABEL maintainer="Alvin Wan <awan@rexchange.com>"
 LABEL version="1.0"
-LABEL description="tutorial"
+LABEL description="sample"
 
 ENV LIB_PATH /usr/src/app
 

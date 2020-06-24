@@ -1,8 +1,8 @@
 ingress:
   hosts:
   # update for your minikube cluster ip (minikube status)
-    - host: tutorial.192.168.99.100.nip.io
-      path: /tutorial
+    - host: sample.192.168.99.100.nip.io
+      path: /sample
 
 env:
   REX_dinolol_LOG_LEVEL: DEBUG

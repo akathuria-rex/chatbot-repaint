@@ -1,6 +1,6 @@
-nameOverride: tutorial
+nameOverride: sample
 image:
-  repository: rex/tutorial
+  repository: rex/sample
 
 service:
   name: sample

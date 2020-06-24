@@ -1,5 +1,5 @@
 # Project configuration
-PROJECT_NAME = tutorial
+PROJECT_NAME = sample
 
 # General.
 SHELL = /bin/bash
