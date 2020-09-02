@@ -60,20 +60,27 @@ clean-stage:
 conda: ## Setup the conda environment
 	conda env update -f environment.yml
 
-deploy-minikube: ## Deploy the application to minikube
-	@HELM_ENV=minikube bash tools/helm_apply.sh $(PROJECT_NAME) $(DEPLOY_EXTRA_OPTS)
+deploy-local: ## Deploy the application to local
+	HELM_ENV=local bash tools/helm_apply.sh $(PROJECT_NAME) $(DEPLOY_EXTRA_OPTS)
 
-deploy-prod: ## Deploy the application to production
-	@HELM_ENV=prod bash tools/helm_apply.sh $(PROJECT_NAME) $(DEPLOY_EXTRA_OPTS)
-	kubectl config use-context minikube
+deploy-prod: pre-deploy ## Deploy the application to production
+	@echo "Don't do that."
 
-deploy-qa: ## Deploy the application to QA
-	@HELM_ENV=qa bash tools/helm_apply.sh $(PROJECT_NAME) $(DEPLOY_EXTRA_OPTS)
-	kubectl config use-context minikube
+deploy-qa: pre-deploy ## Deploy the application to QA
+	HELM_ENV=qa bash tools/helm_apply.sh $(PROJECT_NAME) $(DEPLOY_EXTRA_OPTS)
 
-deploy-stage: ## Deploy the application to stage
-	@HELM_ENV=stage bash tools/helm_apply.sh $(PROJECT_NAME) $(DEPLOY_EXTRA_OPTS)
-	kubectl config use-context minikube
+deploy-qa2: pre-deploy ## Deploy to QA2
+	HELM_ENV=qa2 bash tools/helm_apply.sh $(PROJECT_NAME) $(DEPLOY_EXTRA_OPTS)
+
+deploy-qa3: pre-deploy ## Deploy to QA3
+	HELM_ENV=qa3 bash tools/helm_apply.sh $(PROJECT_NAME) $(DEPLOY_EXTRA_OPTS)
+
+deploy-qa4: pre-deploy ## Deploy to QA4
+	HELM_ENV=qa4 bash tools/helm_apply.sh $(PROJECT_NAME) $(DEPLOY_EXTRA_OPTS)
+
+deploy-stage: pre-deploy ## Deploy the application to stage
+	@echo "Don't do that."
+
 
 dist: ## Package the application
 	@echo "Not implemented yet."
@@ -95,25 +102,21 @@ dev-conda: conda
 feature-publish: ci-linters test ## Run linters and git flow publish the current feature
 	git flow feature publish
 
-insightly-dev:
-	@echo $(REX_SVC_INSIGHTLY_API_KEY) > apikey.txt && echo "YOU ARE USING QA INSIGHTLY!"
-
-insightly-prod:
-	@echo $(REX_SVC_INSIGHTLY_PROD_API_KEY) > apikey.txt && echo "YOU ARE USING PROD INSIGHTLY!"
-
 lint-fix: ## fixes linting issues
 	yapf -i -r -vv -e insightly/api/ .
 
-release-push: ## after finishing a release, pushes, develop, master, and tags
+pre-deploy: build-docker push-docker ## build and push docker image
+
+push-release: ## after finishing a release, pushes, develop, master, and tags
 	git checkout develop && git push && git checkout master && git push && git push --tags && git checkout develop
 	@echo "you are now on DEVELOP"
 
 run-dev: ## runs flask dev server
-	FLASK_APP=dinolol FLASK_ENV=development flask run
+	FLASK_APP=sample FLASK_ENV=development flask run
 
 setup: docker-build ## Setup the full environment (default)
 
 test:
 	python -m unittest -v ${TEST}
 
-.PHONY: help ci-all ci-linters ci-doc ci-tests clean clean-all clean-docker clean-minikube deploy-minikube deploy-prod deploy-qa deploy-stage dist docker-build docker-push setup
+.PHONY: help ci-all ci-linters ci-doc ci-tests clean clean-all clean-docker clean-minikube deploy-minikube deploy-prod deploy-qa deploy-stage dist build-docker push-docker setup
