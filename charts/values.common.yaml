@@ -2,11 +2,11 @@ nameOverride: sample
 image:
   repository: rex/sample
 
-service:
-  name: sample
-  externalPort: '80'
-  internalPort: '80'
-  type: NodePort
+services:
+  - name: sample
+    externalPort: '80'
+    internalPort: '80'
+    type: NodePort
 
 ingress:
   enabled: true
