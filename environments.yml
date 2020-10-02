@@ -1,4 +1,4 @@
-name: sample
+name: chatbot-repaint
 channels:
 - defaults
 dependencies:

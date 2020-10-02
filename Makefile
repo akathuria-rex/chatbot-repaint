@@ -1,5 +1,5 @@
 # Project configuration
-PROJECT_NAME = sample
+PROJECT_NAME = repaint_chatbot
 
 # General.
 SHELL = /bin/bash

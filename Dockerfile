@@ -1,8 +1,8 @@
 FROM python:3.6
 
-LABEL maintainer="Alvin Wan <awan@rexchange.com>"
+LABEL maintainer="Aurum Kathuria <akathuria@rexhomes.com>"
 LABEL version="1.0"
-LABEL description="sample"
+LABEL description="chatbot-repaint"
 
 ENV LIB_PATH /usr/src/app
 

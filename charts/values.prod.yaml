@@ -1,6 +1,6 @@
 ingress:
   hosts:
-    - host: sample.rexagents.com
+    - host: chatbot-repaint.rexhomes.com
 
 env:
   REX_dinolol_LOG_LEVEL: WARNING

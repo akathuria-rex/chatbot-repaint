@@ -1,6 +1,6 @@
 ingress:
   hosts:
-    - host: qa-sample.rexagents.com
+    - host: qa-chatbot-repaint.rexhomes.com
 
 env:
   REX_dinolol_LOG_LEVEL: INFO

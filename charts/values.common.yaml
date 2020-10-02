@@ -1,6 +1,6 @@
-nameOverride: sample
+nameOverride: chatbot-repaint
 image:
-  repository: rex/sample
+  repository: rex/chatbot-repaint
 
 services:
   - name: sample
