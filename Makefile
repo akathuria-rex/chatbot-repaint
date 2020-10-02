@@ -1,5 +1,5 @@
 # Project configuration
-PROJECT_NAME = repaint_chatbot
+PROJECT_NAME = chatbot-repaint
 
 # General.
 SHELL = /bin/bash
