@@ -1,0 +1,12 @@
+nameOverride: chatbot-repaint
+image:
+  repository: rex/chatbot-repaint
+
+services:
+  - name: sample
+    externalPort: '80'
+    internalPort: '80'
+    type: NodePort
+
+ingress:
+  enabled: true

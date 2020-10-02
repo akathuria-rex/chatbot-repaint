@@ -1,0 +1,9 @@
+ingress:
+  hosts:
+  # update for your minikube cluster ip (minikube status)
+    - host: chatbot-repaint.192.168.99.100.nip.io
+      path: /chatbot-repaint
+
+env:
+  REX_dinolol_LOG_LEVEL: DEBUG
+  REX_DB_PROPENSITY_PATH: propensity

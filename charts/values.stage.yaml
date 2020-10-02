@@ -1,0 +1,7 @@
+ingress:
+  hosts:
+    - host: stage-chatbot-repaint.rexhomes.com
+
+env:
+  REX_dinolol_LOG_LEVEL: WARNING
+  REX_DB_PROPENSITY_PATH: propensity

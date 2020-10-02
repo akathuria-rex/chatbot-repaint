@@ -1,0 +1,7 @@
+ingress:
+  hosts:
+    - host: qa-chatbot-repaint.rexhomes.com
+
+env:
+  REX_dinolol_LOG_LEVEL: INFO
+  REX_DB_PROPENSITY_PATH: propensity
