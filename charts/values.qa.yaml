@@ -1,0 +1,7 @@
+ingress:
+  hosts:
+    - host: qa-sample.rexagents.com
+
+env:
+  REX_dinolol_LOG_LEVEL: INFO
+  REX_DB_PROPENSITY_PATH: propensity

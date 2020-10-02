@@ -1,0 +1,9 @@
+ingress:
+  hosts:
+  # update for your minikube cluster ip (minikube status)
+    - host: sample.192.168.99.100.nip.io
+      path: /sample
+
+env:
+  REX_dinolol_LOG_LEVEL: DEBUG
+  REX_DB_PROPENSITY_PATH: propensity

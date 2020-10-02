@@ -1,0 +1,8 @@
+name: sample
+channels:
+- defaults
+dependencies:
+- python=3.6
+- flake8
+- pip:
+  - yapf
