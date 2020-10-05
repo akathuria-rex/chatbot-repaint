@@ -8,7 +8,7 @@ app = Flask(__name__)
 def sms_reply():
     """Respond to an incoming text message. """
     # Start TwiML Response
-    resp = MessagingReponse()
+    resp = MessagingResponse()
 
     # Get the user's text message
     text = request.values.get('body', None)
