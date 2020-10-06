@@ -1,3 +1,4 @@
+files now on BitBucket @ https://bitbucket.org/rexdev/rex-chatbot-repaint/src/master/
 <<<<<<< HEAD
 # chatbot-repaint
 =======
